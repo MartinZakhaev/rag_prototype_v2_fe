@@ -1,6 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ChatInterface } from "@/components/ui/chat-interface";
 import { DocumentUpload } from "@/components/ui/document-upload";
+import { ModelViewer } from "@/components/ui/model-viewer";
 
 export default function Home() {
   return (
@@ -15,7 +16,19 @@ export default function Home() {
           <TabsTrigger value="upload">Upload Documents</TabsTrigger>
         </TabsList>
         <TabsContent value="chat" className="mt-6">
-          <ChatInterface />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="md:col-span-2">
+              <ChatInterface />
+            </div>
+            <div className="md:col-span-1">
+              <div className="bg-slate-50 dark:bg-slate-900 rounded-lg p-4 h-full">
+                <h3 className="text-lg font-medium mb-2">Virtual Assistant</h3>
+                <ModelViewer
+                  modelPath="/models/68296e4c0bc631a87abfaff4.glb"
+                />
+              </div>
+            </div>
+          </div>
         </TabsContent>
         <TabsContent value="upload" className="mt-6">
           <DocumentUpload />
