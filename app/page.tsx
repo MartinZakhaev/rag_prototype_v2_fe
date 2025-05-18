@@ -1,9 +1,30 @@
+'use client'
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ChatInterface } from "@/components/ui/chat-interface";
 import { DocumentUpload } from "@/components/ui/document-upload";
 import { ModelViewer } from "@/components/ui/model-viewer";
+import { DebugPanel } from "@/components/ui/debug-panel";
+import { useState, useRef } from "react";
+import { EmotionType } from "@/components/ui/avatar-emotions";
 
 export default function Home() {
+  const [emotionController, setEmotionController] = useState<{
+    setEmotion: (emotion: EmotionType, intensity: number) => void;
+  } | null>(null);
+
+  const handleEmotionControllerRef = (controller: {
+    setEmotion: (emotion: EmotionType, intensity: number) => void;
+  }) => {
+    setEmotionController(controller);
+  };
+
+  const handleEmotionChange = (emotion: EmotionType, intensity: number) => {
+    if (emotionController) {
+      emotionController.setEmotion(emotion, intensity);
+    }
+  };
+
   return (
     <div className="container mx-auto py-10">
       <h1 className="text-3xl font-bold text-center mb-8">
@@ -25,6 +46,7 @@ export default function Home() {
                 <h3 className="text-lg font-medium mb-2">Virtual Assistant</h3>
                 <ModelViewer
                   modelPath="/models/68296e4c0bc631a87abfaff4.glb"
+                  onEmotionControllerRef={handleEmotionControllerRef}
                 />
               </div>
             </div>
@@ -34,6 +56,9 @@ export default function Home() {
           <DocumentUpload />
         </TabsContent>
       </Tabs>
+
+      {/* Debug Panel */}
+      <DebugPanel onEmotionChange={handleEmotionChange} />
     </div>
   );
 }
