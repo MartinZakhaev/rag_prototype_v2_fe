@@ -1,137 +1,117 @@
-# Welcome to StackEdit!
+# RAG Virtual Agent v2 - Frontend
 
-Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar.
+![rag-virtual-agent-v2](https://ik.imagekit.io/terracorp/rag-prototyping-v2-chat-interface.png?updatedAt=1747543178794)
 
-# Files
+## Project Overview
 
-StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible **offline!**
+This is the frontend component of a RAG (Retrieval-Augmented Generation) Virtual Agent application. The project is built using Next.js and React, with a focus on creating an interactive 3D virtual agent experience. The application leverages modern web technologies to provide a responsive and engaging user interface.
+The frontend includes:
 
-## Create files and folders
+- 3D model rendering capabilities using Three.js and React Three Fiber
+- UI components built with shadcn/ui and Radix UI primitives
+- TypeScript for type safety and better developer experience
+- Tailwind CSS for styling with a custom configuration
 
-The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the **New file** button in the file explorer. You can also create folders by clicking the **New folder** button.
+## Tech Stack
 
-## Switch to another file
+### Core Technologies
 
-All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
+- Next.js : v15.3.2 - React framework with server-side rendering capabilities
+- React : v19.0.0 - JavaScript library for building user interfaces
+- TypeScript : v5.x - Typed JavaScript for better developer experience
 
-## Rename a file
+### 3D Rendering
 
-You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
+- Three.js : v0.176.0 - JavaScript 3D library
+- @react-three/fiber : v9.1.2 - React renderer for Three.js
+- @react-three/drei : v10.0.7 - Useful helpers for React Three Fiber
 
-## Delete a file
+### UI Components
 
-You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
+- shadcn/ui : v0.0.4 - Component library built on Radix UI
+- Radix UI : Various components including:
+  - react-avatar: v1.1.9
+  - react-label: v2.1.6
+  - react-slot: v1.2.2
+  - react-tabs: v1.1.11
+- Lucide React : v0.510.0 - Icon library
 
-## Export a file
+### Styling
 
-You can export the current file by clicking **Export to disk** in the menu. You can choose to export the file as plain Markdown, as HTML using a Handlebars template or as a PDF.
+- Tailwind CSS : v4.x - Utility-first CSS framework
+- class-variance-authority : v0.7.1 - For creating variant components
+- clsx : v2.1.1 - Utility for constructing className strings
+- tailwind-merge : v3.3.0 - Merge Tailwind CSS classes without conflicts
+- tw-animate-css : v1.2.9 - Animation utilities for Tailwind
 
-# Synchronization
+### Development Tools
 
-Synchronization is one of the biggest features of StackEdit. It enables you to synchronize any file in your workspace with other files stored in your **Google Drive**, your **Dropbox** and your **GitHub** accounts. This allows you to keep writing on other devices, collaborate with people you share the file with, integrate easily into your workflow... The synchronization mechanism takes place every minute in the background, downloading, merging, and uploading file modifications.
+- ESLint : v9.x - JavaScript linter
+- Turbopack : Used in development mode for faster builds
 
-There are two types of synchronization and they can complement each other:
+## Getting Started
 
-- The workspace synchronization will sync all your files, folders and settings automatically. This will allow you to fetch your workspace on any other device.
+### Prerequisites
 
-  > To start syncing your workspace, just sign in with Google in the menu.
+- Node.js (compatible with Next.js 15.3.2)
+- npm or yarn
 
-- The file synchronization will keep one file of the workspace synced with one or multiple files in **Google Drive**, **Dropbox** or **GitHub**.
-  > Before starting to sync files, you must link an account in the **Synchronize** sub-menu.
+### Installation
 
-## Open a file
+    # clone repo this repo to your machine first
+    git clone https://github.com/MartinZakhaev/rag_prototype_v2_fe.git
 
-You can open a file from **Google Drive**, **Dropbox** or **GitHub** by opening the **Synchronize** sub-menu and clicking **Open from**. Once opened in the workspace, any modification in the file will be automatically synced.
+    # Navigate to the frontend directory
+    cd rag_prototype_v2_fe
 
-## Save a file
+    # Install dependencies (this project utilize npm package manager)
+    npm install
 
-You can save any file of the workspace to **Google Drive**, **Dropbox** or **GitHub** by opening the **Synchronize** sub-menu and clicking **Save on**. Even if a file in the workspace is already synced, you can save it to another location. StackEdit can sync one file with multiple locations and accounts.
+### Development
 
-## Synchronize a file
+    # Run the development server with Turbopack
+    npm run dev
 
-Once your file is linked to a synchronized location, StackEdit will periodically synchronize it by downloading/uploading any modification. A merge will be performed if necessary and conflicts will be resolved.
+## Project Structure
 
-If you just have modified your file and you want to force syncing, click the **Synchronize now** button in the navigation bar.
-
-> **Note:** The **Synchronize now** button is disabled if you have no file to synchronize.
-
-## Manage file synchronization
-
-Since one file can be synced with multiple locations, you can list and manage synchronized locations by clicking **File synchronization** in the **Synchronize** sub-menu. This allows you to list and remove synchronized locations that are linked to your file.
-
-# Publication
-
-Publishing in StackEdit makes it simple for you to publish online your files. Once you're happy with a file, you can publish it to different hosting platforms like **Blogger**, **Dropbox**, **Gist**, **GitHub**, **Google Drive**, **WordPress** and **Zendesk**. With [Handlebars templates](http://handlebarsjs.com/), you have full control over what you export.
-
-> Before starting to publish, you must link an account in the **Publish** sub-menu.
-
-## Publish a File
-
-You can publish your file by opening the **Publish** sub-menu and by clicking **Publish to**. For some locations, you can choose between the following formats:
-
-- Markdown: publish the Markdown text on a website that can interpret it (**GitHub** for instance),
-- HTML: publish the file converted to HTML via a Handlebars template (on a blog for example).
-
-## Update a publication
-
-After publishing, StackEdit keeps your file linked to that publication which makes it easy for you to re-publish it. Once you have modified your file and you want to update your publication, click on the **Publish now** button in the navigation bar.
-
-> **Note:** The **Publish now** button is disabled if your file has not been published yet.
-
-## Manage file publication
-
-Since one file can be published to multiple locations, you can list and manage publish locations by clicking **File publication** in the **Publish** sub-menu. This allows you to list and remove publication locations that are linked to your file.
-
-# Markdown extensions
-
-StackEdit extends the standard Markdown syntax by adding extra **Markdown extensions**, providing you with some nice features.
-
-> **ProTip:** You can disable any **Markdown extension** in the **File properties** dialog.
-
-## SmartyPants
-
-SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:
-
-|                  | ASCII                           | HTML                          |
-| ---------------- | ------------------------------- | ----------------------------- |
-| Single backticks | `'Isn't this fun?'`             | 'Isn't this fun?'             |
-| Quotes           | `"Isn't this fun?"`             | "Isn't this fun?"             |
-| Dashes           | `-- is en-dash, --- is em-dash` | -- is en-dash, --- is em-dash |
-
-## KaTeX
-
-You can render LaTeX mathematical expressions using [KaTeX](https://khan.github.io/KaTeX/):
-
-The _Gamma function_ satisfying $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$ is via the Euler integral
-
-$$
-\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
-$$
-
-> You can find more information about **LaTeX** mathematical expressions [here](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference).
+- /app : Next.js app directory containing pages and layouts
+- /components : Reusable UI components
+- /lib : Utility functions and shared code
+- /public : Static assets including 3D models
+- /types : TypeScript type definitions
 
 ## UML diagrams
 
-You can render UML diagrams using [Mermaid](https://mermaidjs.github.io/). For example, this will produce a sequence diagram:
-
 ```mermaid
 sequenceDiagram
-Alice ->> Bob: Hello Bob, how are you?
-Bob-->>John: How about you John?
-Bob--x Alice: I am good thanks!
-Bob-x John: I am good thanks!
-Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
+participant User
+participant Frontend as Frontend (Next.js)
+participant ChatInterface as Chat Interface Component
+participant Backend as Backend API
+participant RAG as RAG Engine
+participant VectorDB as Vector Database
+participant LLM as Language Model
 
-Bob-->Alice: Checking with John...
-Alice->John: Yes... John, how are you?
-```
+User->>Frontend: Visit application
+Frontend->>User: Render 3D avatar and UI
+Note right of Frontend: Using React Three Fiber<br/>and 3D model (.glb file)
+User->>ChatInterface: Enter query/question
+ChatInterface->>Backend: Send query request
+Backend->>RAG: Process query
+RAG->>VectorDB: Retrieve relevant documents
+VectorDB-->>RAG: Return document chunks
+RAG->>LLM: Generate response with context
+LLM-->>RAG: Return generated response
+RAG-->>Backend: Format response
+Backend-->>ChatInterface: Return formatted response
+ChatInterface-->>User: Display response
 
-And this will produce a flow chart:
-
-```mermaid
-graph LR
-A[Square Rect] -- Link text --> B((Circle))
-A --> C(Round Rect)
-B --> D{Rhombus}
-C --> D
+User->>ChatInterface: Upload document
+ChatInterface->>Backend: Send document
+Backend->>RAG: Process document
+RAG->>VectorDB: Index document chunks
+VectorDB-->>RAG: Confirm indexing
+RAG-->>Backend: Indexing status
+Backend-->>ChatInterface: Confirm upload complete
+ChatInterface-->>User: Show success message
 ```
